@@ -1,0 +1,56 @@
+{
+"skeleton": {
+	"hash": "zJjMwP4SAo8",
+	"spine": "4.0.64",
+	"x": -57,
+	"y": -26.65,
+	"width": 114,
+	"height": 96,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "Banana", "parent": "root", "length": 48.38, "rotation": 88.68, "x": 0.36, "y": 3.28 }
+],
+"slots": [
+	{ "name": "Banana", "bone": "Banana", "attachment": "images/UI/Banana" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Banana": {
+				"images/UI/Banana": { "x": 18.06, "y": 0.77, "rotation": -88.68, "width": 114, "height": 96 }
+			}
+		}
+	}
+],
+"animations": {
+	"Action_01": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "x": 0.36 }
+				]
+			},
+			"Banana": {
+				"translate": [
+					{},
+					{ "time": 0.1667, "x": 132.99 },
+					{ "time": 0.4, "x": 145.72 }
+				],
+				"scale": [
+					{},
+					{ "time": 0.0667, "x": 0.883, "y": 1.087 },
+					{ "time": 0.3, "x": 0.856, "y": 1.116 },
+					{ "time": 0.4, "x": 1.084, "y": 0.933 },
+					{ "time": 0.4667, "x": 1.136, "y": 0.921 },
+					{ "time": 0.5667, "x": 0.978, "y": 1.022 },
+					{ "time": 0.6667 }
+				]
+			}
+		}
+	}
+}
+}

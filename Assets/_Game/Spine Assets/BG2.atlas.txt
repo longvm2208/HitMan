@@ -1,0 +1,7 @@
+BG2.png
+size:222,256
+filter:Linear,Linear
+pma:true
+BG/BG2
+bounds:2,2,218,252
+offsets:1,1,220,255

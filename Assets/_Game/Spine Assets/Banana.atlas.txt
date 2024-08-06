@@ -1,0 +1,7 @@
+Banana.png
+size:115,97
+filter:Linear,Linear
+pma:true
+images/UI/Banana
+bounds:2,2,111,93
+offsets:2,2,114,96
