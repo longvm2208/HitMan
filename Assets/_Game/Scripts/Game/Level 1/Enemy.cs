@@ -88,6 +88,8 @@ public class Enemy : MonoBehaviour
         direction = (destination - myTransform.position).normalized;
         ChangeDirection(direction.x);
         isPatrolling = true;
+
+        animationController.SetAnimation(0, "Walk_01", true);
     }
 
     public void StopPatrol()

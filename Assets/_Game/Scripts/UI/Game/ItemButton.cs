@@ -1,20 +1,34 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemButton : MonoBehaviour
 {
+	[SerializeField] RectTransform myRt;
     [SerializeField] Image itemImage;
 	[SerializeField] RectTransform itemRt;
 
 	[SerializeField] int index;
 	[SerializeField] ItemBar bar;
 
+	bool selected;
+
     private void OnValidate()
     {
+		if (myRt == null)
+		{
+			myRt = transform as RectTransform;
+		}
+
         if (itemImage != null && itemRt == null)
 		{
 			itemRt = itemImage.transform as RectTransform;
 		}
+    }
+
+    private void Start()
+    {
+		itemRt.DOScale(1.2f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
     }
 
     public void Init(int index, ItemBar bar, Sprite itemSprite)
@@ -39,9 +53,18 @@ public class ItemButton : MonoBehaviour
 		}
 	}
 
+	public void OnSelect()
+	{
+		selected = true;
+		myRt.DOAnchorPosX(0, 0.5f);
+		itemRt.DOKill();
+	}
+
 	#region UI Events
 	public void OnClick()
 	{
+		if (selected) return;
+
 		bar.OnItemSelected(index);
 	}
 	#endregion

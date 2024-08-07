@@ -11,6 +11,7 @@ public class AnimationGroup : MonoBehaviour
 
     bool isComplete;
     WaitForSeconds waitLastAnimation;
+    Action onComplete;
 
     public bool IsComplete => isComplete;
 
@@ -50,7 +51,7 @@ public class AnimationGroup : MonoBehaviour
         }
     }
 
-    public void Play(Action onComplete = null)
+    public void Play()
     {
         StartCoroutine(Routine());
 
@@ -76,5 +77,10 @@ public class AnimationGroup : MonoBehaviour
             canvasGroup.interactable = true;
             onComplete?.Invoke();
         }
+    }
+
+    public void OnComplete(Action onComplete = null)
+    {
+        this.onComplete = onComplete;
     }
 }

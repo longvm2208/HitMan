@@ -6,7 +6,9 @@ public abstract class PopupWithCloseAnimation : PopupBase
 
     public override void Close()
     {
-        animationGroup.Play(() =>
+        animationGroup.Play();
+
+        animationGroup.OnComplete(() =>
         {
             UIManager.Instance.OnPopupClose();
             gameObject.SetActive(false);
